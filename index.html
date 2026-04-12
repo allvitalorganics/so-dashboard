@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sensitive Ones — Brand Master Plan</title>
 <style>
+/* PASSWORD GATE */
+#gate{position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+#gate.hide{display:none}
+#gate h2{font-size:14px;color:#B8255A;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+#gate input{background:#111;border:1px solid #333;color:#fff;padding:12px 20px;border-radius:6px;font-size:14px;width:260px;text-align:center;margin-bottom:8px;outline:none}
+#gate input:focus{border-color:#B8255A}
+#gate button{background:#B8255A;color:#fff;border:none;padding:10px 32px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:1px}
+#gate .err{color:#c0392b;font-size:11px;margin-top:8px;display:none}
+</style>
+<script>
+function checkPw(){
+var pw=document.getElementById('pw').value;
+var hash=Array.from(new Uint8Array(new Uint8Array(256))).map(function(){return 0;});
+async function verify(){
+var enc=new TextEncoder().encode(pw);
+var buf=await crypto.subtle.digest('SHA-256',enc);
+var arr=Array.from(new Uint8Array(buf));
+var hex=arr.map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+if(hex==='babe0d5d0bb44b7fe0ec825e5f4748a826281f60e48631e56905da7d372c89f4'){
+document.getElementById('gate').classList.add('hide');
+}else{
+document.getElementById('gate-err').style.display='block';
+}
+}
+verify();
+}
+</script>
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#0a0a0a;color:#fff;line-height:1.8;padding:0}
 .wrap{max-width:980px;margin:0 auto;padding:16px 24px 80px}
@@ -48,6 +76,13 @@ td{padding:5px 6px;border-bottom:1px solid #151515;color:#888}
 </style>
 </head>
 <body>
+
+<div id="gate">
+<h2>sensitive ones</h2>
+<input type="password" id="pw" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">ACCESS</button>
+<p class="err" id="gate-err">Incorrect password.</p>
+</div>
 
 <div class="tabs">
 <div class="tab on" onclick="show('hq')">HQ</div>
