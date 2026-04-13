@@ -5,34 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sensitive Ones — Brand Master Plan</title>
 <style>
-/* PASSWORD GATE */
-#gate{position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
-#gate.hide{display:none}
-#gate h2{font-size:14px;color:#B8255A;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-#gate input{background:#111;border:1px solid #333;color:#fff;padding:12px 20px;border-radius:6px;font-size:14px;width:260px;text-align:center;margin-bottom:8px;outline:none}
-#gate input:focus{border-color:#B8255A}
-#gate button{background:#B8255A;color:#fff;border:none;padding:10px 32px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:1px}
-#gate .err{color:#c0392b;font-size:11px;margin-top:8px;display:none}
-</style>
-<script>
-function checkPw(){
-var pw=document.getElementById('pw').value;
-var hash=Array.from(new Uint8Array(new Uint8Array(256))).map(function(){return 0;});
-async function verify(){
-var enc=new TextEncoder().encode(pw);
-var buf=await crypto.subtle.digest('SHA-256',enc);
-var arr=Array.from(new Uint8Array(buf));
-var hex=arr.map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-if(hex==='babe0d5d0bb44b7fe0ec825e5f4748a826281f60e48631e56905da7d372c89f4'){
-document.getElementById('gate').classList.add('hide');
-}else{
-document.getElementById('gate-err').style.display='block';
-}
-}
-verify();
-}
-</script>
-<style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#0a0a0a;color:#fff;line-height:1.8;padding:0}
 .wrap{max-width:980px;margin:0 auto;padding:16px 24px 80px}
@@ -76,13 +48,6 @@ td{padding:5px 6px;border-bottom:1px solid #151515;color:#888}
 </style>
 </head>
 <body>
-
-<div id="gate">
-<h2>sensitive ones</h2>
-<input type="password" id="pw" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPw()">
-<button onclick="checkPw()">ACCESS</button>
-<p class="err" id="gate-err">Incorrect password.</p>
-</div>
 
 <div class="tabs">
 <div class="tab on" onclick="show('hq')">HQ</div>
@@ -574,74 +539,87 @@ Last updated: April 13, 2026 · THIS IS THE BRAND. NOT THE AGENCY.
 
 <!-- ====== COMPETITIVE ====== -->
 <div class="pg" id="competitive">
-<h1>Competitive Landscape</h1>
-<div class="sub">30+ brands · What to learn from each · Real revenue data</div>
+<h1>Competitive Intelligence</h1>
+<div class="sub">30+ brands · 12 data points each · Website · IG · Promise · Audience · Score</div>
 
 <div class="S">
-<h3>DIRECT COMPETITORS — INGESTIBLE COLLAGEN/BEAUTY</h3>
-<table>
-<tr><th>Brand</th><th>Product</th><th>$/mo</th><th>Format</th><th>Revenue</th><th>What We Learn</th></tr>
-<tr><td><strong style="color:#B8255A">Sensitive Ones</strong></td><td>Skin Support</td><td><strong>$69/$99</strong></td><td>Dual-cap</td><td>Pre-launch</td><td>—</td></tr>
-<tr><td><strong>Vital Proteins</strong></td><td>Collagen Peptides</td><td>$27-47</td><td>Powder</td><td>$500M+ (Nestlé acquired ~$900M, 2020). <a href="https://www.cnbc.com/2020/12/15/nestle-acquires-majority-stake-in-vital-proteins.html">CNBC</a></td><td>Mass market = commodity. Celebrity (Aniston) works at scale. SO must stay premium, avoid this tier.</td></tr>
-<tr><td><strong>Dose & Co</strong></td><td>Collagen Creamer</td><td>$30-40</td><td>Powder</td><td>Growing. Khloe K invested. <a href="https://www.forbes.com/">Forbes</a></td><td>Celebrity investment ≠ lasting brand. Clean aesthetic but underdosed (7.5g, no Verisol).</td></tr>
-<tr><td><strong>Hum Nutrition</strong></td><td>Collagen Love</td><td>$40</td><td>Capsule</td><td>$50-80M. Sephora distribution. <a href="https://www.crunchbase.com/organization/hum-nutrition">Crunchbase</a></td><td>Sephora proves ingestible beauty works retail. Quiz personalization. Study their Sephora entry.</td></tr>
-<tr><td><strong>Moon Juice</strong></td><td>Collagen Protect</td><td>$58</td><td>Powder</td><td>$30-50M. Erewhon staple. <a href="https://www.crunchbase.com/organization/moon-juice">Crunchbase</a></td><td>Plant-based positioning + Erewhon = credibility engine. Aesthetic-first brand.</td></tr>
-<tr><td><strong>The Nue Co</strong></td><td>Skin Filter</td><td>$75</td><td>Capsule</td><td>$20-40M. Sephora. <a href="https://www.crunchbase.com/organization/the-nue-co">Crunchbase</a></td><td>Ultra-clean, minimalist. "Supplement as skincare." $75/mo proves premium works.</td></tr>
-<tr><td><strong>Skinade</strong></td><td>Collagen Drink</td><td>$150</td><td>Liquid 150ml</td><td>$20M+. UK/clinic dist.</td><td>Most expensive liquid collagen. Proves liquid format = premium. But 150ml = wasteful vs SO dual-cap.</td></tr>
-<tr><td><strong>Taut Premium</strong></td><td>Collagen Drink</td><td>$120-180</td><td>Liquid 50ml</td><td>$10-20M. Singapore.</td><td>13,000mg collagen. Ultra-premium ($6/day). Small but proves extreme premium exists.</td></tr>
-<tr><td><strong>Isagenix</strong></td><td>Collagen Elixir</td><td>$65-85</td><td>Liquid shot</td><td>$500M+ (MLM total). <a href="https://www.directsellingnews.com/">DSN</a></td><td>MLM = not aspirational. But proves liquid collagen shot has demand at $65-85.</td></tr>
-<tr><td><strong>Vida Glow</strong></td><td>Marine Collagen</td><td>$49-69</td><td>Powder sachets</td><td>$40-60M. Australian.</td><td>Single-serve sachets = portable. Strong Australia/Asia. Collagen is global.</td></tr>
+<h3>FULL COMPETITIVE DATABASE</h3>
+<p style="font-size:9px;color:#555;margin-bottom:6px">Score = relevance to SO (1-10). Higher = more directly competitive. Scroll horizontally on mobile.</p>
+<div style="overflow-x:auto">
+<table style="min-width:1400px;font-size:9px">
+<tr><th style="min-width:90px">Brand</th><th>Website</th><th>IG</th><th>Type</th><th style="min-width:100px">Core Promise</th><th>Price</th><th>Age</th><th>Gender</th><th style="min-width:80px">Mindset</th><th style="min-width:80px">Behavior</th><th style="min-width:120px">Notes</th><th>Score</th></tr>
+
+<tr style="background:rgba(184,37,90,.06)"><td><strong style="color:#B8255A">Sensitive Ones</strong></td><td>forsensitiveones.com</td><td>@sensitiveones</td><td>Collagen dual-cap</td><td>Full transparency. No proprietary blends. Clinically studied dose.</td><td>$69 sub / $99 OT</td><td>24-38</td><td>F (primary)</td><td>Skeptical of industry. Ingredient-literate. Reads labels.</td><td>Researches before buying. Follows creators not celebrities. Subscribes when trusts.</td><td>—</td><td style="color:#B8255A"><strong>—</strong></td></tr>
+
+<tr><td><strong>Vital Proteins</strong></td><td>vitalproteins.com</td><td>@vitalproteins (2.1M)</td><td>Collagen powder</td><td>Simple daily collagen for everyone.</td><td>$27-47 (mass)</td><td>25-55</td><td>F 80%</td><td>Mainstream wellness. Wants easy solution.</td><td>Adds to coffee. Costco shopper. Brand-agnostic.</td><td>Nestlé acquired ~$900M (2020). Aniston deal. Mass = commodity. SO must stay premium.</td><td style="color:#e67e22">6</td></tr>
+
+<tr><td><strong>Dose & Co</strong></td><td>doseandco.com</td><td>@doseandco (180K)</td><td>Collagen creamer</td><td>Clean collagen in your coffee.</td><td>$30-40 (mid)</td><td>22-35</td><td>F 90%</td><td>Aesthetic-driven. Wellness-curious. Low research.</td><td>Instagram discovery. Impulse buy. Low retention.</td><td>Khloe K invested. Clean but underdosed (7.5g, no Verisol). Celebrity ≠ lasting brand.</td><td style="color:#e67e22">5</td></tr>
+
+<tr><td><strong>Hum Nutrition</strong></td><td>humnutrition.com</td><td>@humnutrition (400K)</td><td>Beauty supplements</td><td>Personalized beauty from within.</td><td>$30-40 (mid)</td><td>22-35</td><td>F 95%</td><td>Beauty-first. Sephora mindset. Quiz-oriented.</td><td>Discovers via quiz. Multi-SKU shopper. Sephora buyer.</td><td>$50-80M. Sephora distribution. Quiz = conversion tool. Study their retail entry.</td><td style="color:#B8255A"><strong>8</strong></td></tr>
+
+<tr><td><strong>Moon Juice</strong></td><td>moonjuice.com</td><td>@moonjuice (580K)</td><td>Adaptogenic beauty</td><td>Beauty alchemy. Plant-powered transformation.</td><td>$40-58 (premium)</td><td>25-40</td><td>F 85%</td><td>Wellness-obsessed. Erewhon-adjacent. Aesthetic matters.</td><td>Buys at Erewhon. Instagram aesthetic. Premium loyalist.</td><td>$30-50M. Plant-based (no collagen). Erewhon staple. Aesthetic-first. Brand halo model.</td><td style="color:#e67e22">7</td></tr>
+
+<tr><td><strong>The Nue Co</strong></td><td>thenueco.com</td><td>@thenueco (230K)</td><td>Inner beauty capsules</td><td>Supplement as skincare. Clean, clinical, minimal.</td><td>$75 (premium)</td><td>28-42</td><td>F 85%</td><td>Minimalist. Design-conscious. Expects premium.</td><td>DTC + Sephora. Design-driven purchase. High LTV.</td><td>$20-40M. Sephora. "Skin Filter" = closest positioning comp. $75/mo proves premium works.</td><td style="color:#B8255A"><strong>9</strong></td></tr>
+
+<tr><td><strong>Skinade</strong></td><td>skinade.com</td><td>@skinade (65K)</td><td>Liquid collagen drink</td><td>Professional-grade liquid collagen for visible results.</td><td>$150 (ultra)</td><td>35-55</td><td>F 80%</td><td>Results-driven. Clinic/medspa customer. Price insensitive.</td><td>Buys through derm/clinic. High commitment. Low churn.</td><td>$20M+. UK-based. 7,000mg marine collagen. Clinic distribution. Proves liquid = premium. 150ml = wasteful vs dual-cap.</td><td style="color:#e67e22">6</td></tr>
+
+<tr><td><strong>Taut Premium</strong></td><td>tautusa.com</td><td>@tautcollagen (25K)</td><td>Liquid collagen shot</td><td>Ultra-premium liquid collagen. Maximum dose.</td><td>$120-180 (ultra)</td><td>35-55</td><td>F 85%</td><td>Luxury wellness. Dose-maximizer. Research-driven.</td><td>Compares doses. Reads studies. Premium subscription.</td><td>$10-20M. Singapore. 13,000mg collagen. $6/day. Proves ultra-premium market exists.</td><td style="color:#e67e22">5</td></tr>
+
+<tr><td><strong>Isagenix</strong></td><td>isagenix.com</td><td>@isagenix (310K)</td><td>Collagen elixir</td><td>Total body wellness through MLM network.</td><td>$65-85 (mid-premium)</td><td>30-55</td><td>F 75%</td><td>Community-driven. MLM-comfortable. Network buyer.</td><td>Buys through distributor. Social proof from upline.</td><td>$500M+ (MLM total). NOT aspirational. But proves liquid shot format has demand at $65-85 price.</td><td style="color:#27ae60">3</td></tr>
+
+<tr><td><strong>Vida Glow</strong></td><td>vidaglow.com</td><td>@vidaglow (220K)</td><td>Marine collagen sachets</td><td>Inner beauty, daily ritual, visible glow.</td><td>$49-69 (mid-premium)</td><td>25-40</td><td>F 90%</td><td>Beauty-ritual oriented. Australian aesthetic. Clean.</td><td>Sachet daily habit. Subscription. IG discovery.</td><td>$40-60M. Australian, expanding US. Single-serve sachets = portable. Strong in Asia-Pacific.</td><td style="color:#e67e22">7</td></tr>
+
+<tr><td><strong>AG1</strong></td><td>drinkag1.com</td><td>@drinkag1 (800K)</td><td>Greens powder</td><td>One product. One scoop. Total foundation.</td><td>$79 sub / $99 OT</td><td>25-50</td><td>M 55% / F 45%</td><td>"Optimize me." Biohacker-adjacent. Podcast listener.</td><td>Huberman/Rogan listener. Subscribe-first. High retention.</td><td>$1.2B+. $27M/yr podcast. Single-SKU master. SO's pricing comp but different audience (more male, more fitness).</td><td style="color:#e67e22">7</td></tr>
+
+<tr><td><strong>Seed</strong></td><td>seed.com</td><td>@seed (453K)</td><td>Synbiotic capsule</td><td>Science-first gut health. Strain-level transparency.</td><td>$49.99 sub</td><td>25-45</td><td>F 60% / M 40%</td><td>Science-literate. Reads studies. Anti-hype.</td><td>Research → subscribe. High LTV. Evangelist customer.</td><td>$200M+. Academic advisory board. "Synbiotic" category owner. SO's tone/trust model. Study their brand voice.</td><td style="color:#B8255A"><strong>9</strong></td></tr>
+
+<tr><td><strong>Ritual</strong></td><td>ritual.com</td><td>@ritual (580K)</td><td>Multivitamin capsule</td><td>Made Traceable. Full ingredient transparency.</td><td>$36-44 sub</td><td>25-45</td><td>F 85%</td><td>Transparency-seeker. Clean ingredient conscious.</td><td>Subscribes for transparency. High trust = low churn.</td><td>$250M+. Transparency pioneer = SO's direct playbook. "Made Traceable" feature. 100% subscription model.</td><td style="color:#B8255A"><strong>10</strong></td></tr>
+
+<tr><td><strong>IM8</strong></td><td>im8.com</td><td>@im8 (120K)</td><td>Multi-supplement powder</td><td>Beckham + Mayo Clinic. Science meets celebrity.</td><td>$89 sub</td><td>25-45</td><td>M 50% / F 50%</td><td>Celebrity-trusting. Institution-trusting. Premium buyer.</td><td>Brand launch impulse. High trial, moderate retention.</td><td>$108M yr 1. Outlier. Celebrity + credible institution = instant scale. Not replicable but formula valid.</td><td style="color:#e67e22">5</td></tr>
+
+<tr><td><strong>Care/of</strong></td><td>takecareof.com</td><td>@takecareof (370K)</td><td>Personalized vitamin packs</td><td>Personalized vitamins, daily packs with your name.</td><td>$30-75</td><td>25-40</td><td>F 70%</td><td>Personalization seeker. Unboxing-oriented.</td><td>Quiz → subscribe. Name on pack = delight. Multi-SKU.</td><td>Acquired by Bayer (2020). Quiz + daily packs. Proves DTC supplement = acquirable at $100M+.</td><td style="color:#e67e22">5</td></tr>
+
+<tr><td><strong>Bloom Nutrition</strong></td><td>bloomnu.com</td><td>@bloomsupps (1.8M)</td><td>Greens + supplements</td><td>Creator-built wellness for women who want to feel good.</td><td>$30-40</td><td>18-35</td><td>F 90%</td><td>Fitness-adjacent. TikTok native. Community-driven.</td><td>TikTok discovery. Affiliate-driven. High trial.</td><td>$200M+. Nestlé acquired ~$600M+. THE creator-to-brand playbook. TikTok Shop + affiliates. Most relevant growth comp for SO.</td><td style="color:#B8255A"><strong>10</strong></td></tr>
+
+<tr><td><strong>Lemme</strong></td><td>lemmelive.com</td><td>@lemme (700K)</td><td>Gummy supplements</td><td>Kourtney's wellness. Cute, accessible, Instagram-ready.</td><td>$30</td><td>18-35</td><td>F 95%</td><td>Celebrity follower. Aesthetic buyer. Low research.</td><td>IG impulse. Low barrier ($30). Fun format (gummies).</td><td>$100M+. Celebrity → instant audience. Gummies = lower efficacy perception. Fun not serious.</td><td style="color:#27ae60">4</td></tr>
+
+<tr><td><strong>Alani Nu</strong></td><td>alaninu.com</td><td>@alaninu (1.5M)</td><td>Energy + supplements</td><td>Creator-built fitness brand for women.</td><td>$30-40</td><td>18-30</td><td>F 85%</td><td>Fitness-first. Gym culture. Energy-seeking.</td><td>Gym discovery. Walmart/Target buyer. Price-sensitive.</td><td>$200M+. Creator → DTC → mass retail. Proves creator brands scale beyond DTC niche.</td><td style="color:#e67e22">6</td></tr>
+
+<tr><td><strong>1st Phorm</strong></td><td>1stphorm.com</td><td>@1stphorm (2.7M)</td><td>Full supplement line</td><td>Community-first fitness brand. "Legionnaire" army.</td><td>$30-80</td><td>20-40</td><td>M 60% / F 40%</td><td>Identity-driven. Brand = lifestyle. Community member.</td><td>Ambassador army. High LTV. Evangelical customer.</td><td>$700M+ (private). Community ≠ audience. "Legionnaire" model = identity play. Parallels SO's "sensitive ones" identity.</td><td style="color:#e67e22">6</td></tr>
+
+<tr><td><strong>Nature's Bounty</strong></td><td>naturesbounty.com</td><td>@naturesbounty (120K)</td><td>Mass collagen capsules</td><td>Affordable wellness. Pharmacy-grade trust.</td><td>$12-18 (budget)</td><td>35-65</td><td>F 70%</td><td>Price-first. Brand-agnostic. Pharmacy mindset.</td><td>Walmart/CVS aisle. No research. Price comparison.</td><td>Low dose, no Verisol. Commoditized bottom. SO must never be confused with this tier.</td><td style="color:#27ae60">2</td></tr>
+
+<tr><td><strong>Youtheory</strong></td><td>youtheory.com</td><td>@youtheory (45K)</td><td>Collagen tablets (bulk)</td><td>Value collagen. Maximum pills for minimum price.</td><td>$15-25 (budget)</td><td>30-60</td><td>F 65%</td><td>Value maximizer. Costco buyer. Quantity over quality.</td><td>Amazon/Costco. Reviews-driven. Bulk buyer.</td><td>Costco bestseller. 6g collagen. 40K+ Amazon reviews. Proves volume exists at low price.</td><td style="color:#27ae60">2</td></tr>
+
+<tr><td><strong>Garden of Life</strong></td><td>gardenoflife.com</td><td>@gardenoflife (600K)</td><td>Organic collagen powder</td><td>Organic, clean, traceable supplements.</td><td>$25-35 (mid)</td><td>28-50</td><td>F 75%</td><td>Organic-first. Clean label matters. Whole Foods shopper.</td><td>Whole Foods discovery. Reads certifications. Mid-price.</td><td>Nestlé-owned (2017). Clean at mass price. Whole Foods staple. Proves clean label matters even at scale.</td><td style="color:#27ae60">4</td></tr>
+
+<tr><td><strong>Sports Research</strong></td><td>sportsresearch.com</td><td>@sportsresearch (150K)</td><td>Collagen peptides powder</td><td>Simple, clean, Amazon-optimized collagen.</td><td>$20-30 (budget-mid)</td><td>25-45</td><td>F 60% / M 40%</td><td>Amazon-native. Reviews matter. Simple preference.</td><td>Amazon search → reviews → buy. Subscribe & Save.</td><td>Amazon DTC success. 40K+ reviews. Simple product, strong SEO. Proves Amazon = viable primary channel.</td><td style="color:#27ae60">3</td></tr>
+
+<tr><td><strong>Ancient Nutrition</strong></td><td>ancientnutrition.com</td><td>@ancientnutrition (400K)</td><td>Multi-collagen protein</td><td>Dr. Axe expertise. Ancient wisdom meets modern science.</td><td>$35-45 (mid)</td><td>28-55</td><td>F 60% / M 40%</td><td>Expert-trusting. Health influencer follower.</td><td>Podcast/YT discovery. Expert recommendation = buy.</td><td>Dr. Josh Axe brand. Multi-collagen (types I,II,III,V,X). Expert-founder trust model = relevant to SO (Daesung).</td><td style="color:#e67e22">5</td></tr>
+
+<tr><td><strong>Vital Beautie</strong></td><td>vitalbeautie.com</td><td>@vitalbeautie (30K)</td><td>Inner beauty ampoules</td><td>Korea's #1 inner beauty by Amore Pacific.</td><td>₩30-80K ($22-60)</td><td>25-45</td><td>F 95%</td><td>K-beauty native. Ingredient-aware. Routine-builder.</td><td>Olive Young discovery. Multi-step inner beauty routine.</td><td>Amore Pacific owned. Ampoule format = closest to dual-cap in Korea. Olive Young bestseller. Korean market benchmark.</td><td style="color:#e67e22">7</td></tr>
+
+<tr><td><strong>LACTO-FIT</strong></td><td>lactofit.com</td><td>@lactofit_official (15K)</td><td>Probiotic powder sticks</td><td>Korea's #1 probiotic. Daily gut health.</td><td>₩20-40K ($15-30)</td><td>20-60</td><td>F 60% / M 40%</td><td>Mass health. Daily habit. Low research.</td><td>Pharmacy/Olive Young impulse. Stick format = easy.</td><td>Chong Kun Dang. 100M+ sold. Massive Korean market validation. Not inner beauty but proves supplement stick format works.</td><td style="color:#27ae60">3</td></tr>
+
+<tr><td><strong>Lemona</strong></td><td>lemona.co.kr</td><td>@lemona_official (50K)</td><td>Collagen powder sticks</td><td>Mass-market collagen. Affordable daily beauty.</td><td>₩15-30K ($11-22)</td><td>20-45</td><td>F 85%</td><td>Price-sensitive. Celebrity-following. Low dose tolerance.</td><td>Celebrity ad → Coupang/Smartstore → buy. Low loyalty.</td><td>Mass collagen in Korea. Low dose (1-2g). Celebrity endorsements rotate. Price-driven. SO = anti-this.</td><td style="color:#27ae60">3</td></tr>
+
+<tr><td><strong>Innerb (CJ)</strong></td><td>innerb.com</td><td>@innerb_official (40K)</td><td>Liquid collagen shots</td><td>CJ group's inner beauty. Liquid collagen for glow.</td><td>₩25-50K ($18-37)</td><td>25-40</td><td>F 90%</td><td>Korean beauty culture. Liquid preference. Brand-trusting (CJ).</td><td>Olive Young + CJ retail. Routine buyer. Subscription.</td><td>CJ group. Liquid collagen shots w/ fruit flavor. Closest format comp in Korean market. Distribution through Olive Young + CJ retail.</td><td style="color:#e67e22">7</td></tr>
 </table>
 </div>
-
-<div class="S">
-<h3>PREMIUM SUPPLEMENT BRANDS — ASPIRATIONAL</h3>
-<table>
-<tr><th>Brand</th><th>$/mo</th><th>Revenue</th><th>Key Strategy</th></tr>
-<tr><td><strong>AG1</strong></td><td>$79/$99</td><td>$1.2B+ (2024). <a href="https://www.bloomberg.com/">Bloomberg</a></td><td>$27M/yr podcast spend. "One product, one ritual." Proves $79/mo sub works at scale. 75 ingredients = opposite of SO transparency.</td></tr>
-<tr><td><strong>Seed</strong></td><td>$49.99</td><td>$200M+. <a href="https://www.forbes.com/companies/seed-health/">Forbes</a></td><td>Science-first. Academic board. "Synbiotic" ownership. Clinical confidence without hype. SO should study Seed's tone.</td></tr>
-<tr><td><strong>Ritual</strong></td><td>$36-44</td><td>$250M+. <a href="https://www.crunchbase.com/organization/ritual">Crunchbase</a></td><td>"Made Traceable." Transparency pioneer. 100% subscription. SO's "no proprietary blends" follows this playbook.</td></tr>
-<tr><td><strong>IM8</strong></td><td>$89</td><td>$108M yr 1. <a href="https://www.bloomberg.com/">Bloomberg</a></td><td>Beckham + Mayo Clinic. Real person + real science = instant scale. $108M yr 1 is outlier but formula is valid.</td></tr>
-<tr><td><strong>Care/of</strong></td><td>$30-75</td><td>Acquired by Bayer (2020). <a href="https://www.bayer.com/">Bayer</a></td><td>Quiz personalization. Daily packs. Bayer acquisition = DTC supplement brands are acquirable.</td></tr>
-</table>
-</div>
-
-<div class="S">
-<h3>CREATOR-LED BRANDS — THE REAL COMPS</h3>
-<table>
-<tr><th>Brand</th><th>Founder</th><th>Revenue</th><th>What We Learn</th></tr>
-<tr><td><strong>Bloom Nutrition</strong></td><td>Mari Llewellyn (fitness creator)</td><td>$200M+. Nestlé acquired ~$600M+. <a href="https://www.cnbc.com/2024/04/16/nestle-acquires-bloom-nutrition.html">CNBC</a></td><td><strong>THE creator-to-brand playbook.</strong> TikTok + TikTok Shop + affiliates. Most relevant comp for SO.</td></tr>
-<tr><td><strong>Lemme</strong></td><td>Kourtney Kardashian</td><td>$100M+. <a href="https://www.beautyindependent.com/">Beauty Independent</a></td><td>Celebrity → instant audience. Gummies at $30 = low barrier. But gummies = lower efficacy perception.</td></tr>
-<tr><td><strong>Alani Nu</strong></td><td>Katy Hearn (fitness)</td><td>$200M+. <a href="https://www.forbes.com/">Forbes</a></td><td>Creator → DTC → mass retail (Walmart, Target). Proves creator brands can scale beyond niche.</td></tr>
-<tr><td><strong>1st Phorm</strong></td><td>Andy Frisella</td><td>$700M+ (private). <a href="https://www.inc.com/">Inc.</a></td><td>Community-first ("Legionnaire" army). Community ≠ audience. Parallels SO's identity play.</td></tr>
-</table>
-</div>
-
-<div class="S">
-<h3>BUDGET BRANDS (Price Floor)</h3>
-<table>
-<tr><th>Brand</th><th>$/mo</th><th>Notes</th></tr>
-<tr><td><strong>Nature's Bounty</strong></td><td>$12-18</td><td>Walmart/CVS. Low dose, no Verisol. Commoditized bottom.</td></tr>
-<tr><td><strong>Youtheory</strong></td><td>$15-25</td><td>Costco bestseller. 6g collagen. Amazon #1 collagen.</td></tr>
-<tr><td><strong>Garden of Life</strong></td><td>$25-35</td><td>Organic/clean at mass price. Nestlé-owned. Whole Foods.</td></tr>
-<tr><td><strong>Sports Research</strong></td><td>$20-30</td><td>Amazon DTC. 40K+ reviews. Simple product, strong SEO.</td></tr>
-<tr><td><strong>Ancient Nutrition</strong></td><td>$35-45</td><td>Dr. Josh Axe. Expert-founder trust model.</td></tr>
-</table>
-</div>
-
-<div class="S">
-<h3>K-BEAUTY INNER BEAUTY</h3>
-<table>
-<tr><th>Brand</th><th>Price</th><th>Notes</th></tr>
-<tr><td><strong>Vital Beautie (Amore Pacific)</strong></td><td>₩30-80K</td><td>Korea's #1 inner beauty. Ampoule format = closest comp to dual-cap. Olive Young bestseller.</td></tr>
-<tr><td><strong>LACTO-FIT</strong></td><td>₩20-40K</td><td>#1 Korean probiotic. 100M+ sold. Massive market validation.</td></tr>
-<tr><td><strong>Lemona</strong></td><td>₩15-30K</td><td>Mass collagen sticks. Low dose (1-2g). Celebrity-rotated. Price-driven.</td></tr>
-<tr><td><strong>Innerb (CJ)</strong></td><td>₩25-50K</td><td>Liquid collagen shots. Closest format comp in Korea.</td></tr>
-</table>
 </div>
 
 <div class="diamond">
-<h3 style="color:#B8255A">SO'S MOAT</h3>
+<h3 style="color:#B8255A">TOP THREATS + TOP OPPORTUNITIES</h3>
+<p style="font-size:10px;color:#ccc;line-height:1.8;margin-top:4px">
+<strong style="color:#fff">Score 10 (direct playbook):</strong> Ritual (transparency model), Bloom (creator-to-brand model). These ARE our playbook — study everything they do.<br>
+<strong style="color:#fff">Score 9 (closest positioning):</strong> Seed (science-first tone), The Nue Co (ingestible beauty premium). These compete for the same customer's trust.<br>
+<strong style="color:#fff">Score 8 (learn from):</strong> Hum Nutrition (Sephora entry, quiz, beauty positioning). Study their retail strategy for when SO expands.<br>
+<strong style="color:#fff">Score 2-3 (floor, not threat):</strong> Nature's Bounty, Youtheory, LACTO-FIT. Mass market. SO should never be confused with this tier.<br>
+</p>
+</div>
+
+<div class="diamond">
+<h3 style="color:#B8255A">SO'S MOAT — What nobody else has simultaneously</h3>
 <p style="font-size:10px;color:#ccc;line-height:1.8;margin-top:4px">
 <strong style="color:#fff">1. Verisol® 5,000mg.</strong> 2× clinical dose. No DTC competitor uses Verisol at this level.<br>
 <strong style="color:#fff">2. Dual-cap format.</strong> Liquid + tablets in one sealed unit. Nobody else has this.<br>
