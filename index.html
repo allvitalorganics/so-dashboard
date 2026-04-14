@@ -45,6 +45,28 @@ td{padding:5px 6px;border-bottom:1px solid #151515;color:#888}
 .def strong{color:#B8255A;font-size:10px}
 .def p{font-size:10px;color:#888;margin-top:1px}
 .src{font-size:8px;color:#333;font-style:italic}
+/* Audit tab styles */
+.audit-item{display:grid;grid-template-columns:24px 1fr 90px 100px;gap:8px;align-items:start;padding:6px 0;border-bottom:1px solid #151515;font-size:10px}
+.audit-item:last-child{border-bottom:none}
+.aicon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0;margin-top:1px}
+.adone{background:rgba(39,174,96,.15);color:#27ae60;border:1px solid rgba(39,174,96,.3)}
+.aprog{background:rgba(230,126,34,.15);color:#e67e22;border:1px solid rgba(230,126,34,.3)}
+.amiss{background:rgba(192,57,43,.15);color:#c0392b;border:1px solid rgba(192,57,43,.3)}
+.audit-item .awhat{color:#ccc}
+.audit-item .awho{color:#555;font-size:9px}
+.audit-item .awhen{color:#555;font-size:9px}
+.acritical{background:rgba(192,57,43,.03);padding:4px 6px;border-radius:4px}
+.audit-section{background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:14px;margin:6px 0}
+.agap{background:rgba(192,57,43,.04);border:1px solid rgba(192,57,43,.1);border-radius:6px;padding:10px;margin:6px 0}
+.agap-title{font-size:10px;font-weight:700;color:#c0392b;margin-bottom:4px}
+.agap p{font-size:9px;color:#888}
+.audit-summary{background:#111;border:1px solid #222;border-radius:8px;padding:16px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;text-align:center}
+.audit-summary .anum{font-size:28px;font-weight:800}
+.audit-summary .alabel{font-size:8px;color:#555;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.score-pill{font-size:11px;font-weight:800;padding:3px 10px;border-radius:100px;margin-left:auto}
+.score-pill-green{background:rgba(39,174,96,.15);color:#27ae60}
+.score-pill-yellow{background:rgba(230,126,34,.15);color:#e67e22}
+.score-pill-red{background:rgba(192,57,43,.15);color:#c0392b}
 </style>
 </head>
 <body>
@@ -922,213 +944,268 @@ Last updated: April 13, 2026 · THIS IS THE BRAND. NOT THE AGENCY.
 
 <!-- ====== AUDIT ====== -->
 <div class="pg" id="audit">
-<h1>Launch Readiness Audit</h1>
-<div class="sub">107 items · 60% ready · Apr 13, 2026 · Target: Late Jun-Jul · ✓ Done · ◐ In Progress · ✗ Not Started</div>
+<h1>SENSITIVE ONES — LAUNCH READINESS AUDIT</h1>
+<p style="font-size:12px;color:#B8255A;font-weight:600;margin-bottom:4px">Full gap analysis across every function · What's done · What's missing · What will kill you</p>
+<div class="sub">Audited: April 13, 2026 · Target launch: Late June-July 2026 · Time remaining: ~10-12 weeks</div>
 
-<div class="S"><div class="g4">
-<div class="stat card"><div class="n green">56</div><div class="l">Done</div></div>
-<div class="stat card"><div class="n yel">29</div><div class="l">In Progress</div></div>
-<div class="stat card"><div class="n red">22</div><div class="l">Not Started</div></div>
-<div class="stat card"><div class="n mg">60%</div><div class="l">Ready</div></div>
-</div></div>
-
-<h2>1. Legal & Compliance <span style="font-size:10px;color:#c0392b;margin-left:auto">4/10</span></h2>
-<div class="S"><p style="color:#c0392b;font-size:9px;font-weight:700;margin-bottom:6px">⚠ HIGHEST RISK. Any one can block launch or trigger lawsuit.</p>
-<table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>LLC formed (For Sensitive Ones LLC, Ohio)</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>EIN obtained</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Operating Agreement signed by all 3 co-founders</strong> — equity, roles, decision authority, exit provisions. NO legal protection without this.</td><td>Justin</td><td style="color:#c0392b">ASAP</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Ohio LLC annual filing / franchise tax</strong> — check if Ohio requires annual report or CAT.</td><td>Justin</td><td>Check date</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>FDA Structure/Function Claim Notification</strong> — must file within 30 days of first marketing. Free but attorney review $1-3K. LEGALLY REQUIRED.</td><td>Justin</td><td style="color:#c0392b">Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Foreign Facility Registration</strong> — confirm COSMAX NBT is FDA-registered. Must register BEFORE shipping to US.</td><td>Justin</td><td>Before import</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>US Agent designation</strong> — COSMAX must designate a US-based agent as FDA contact.</td><td>Justin</td><td>Before import</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>FSVP (Foreign Supplier Verification Program)</strong> — SO LLC as importer must create and maintain records. Required by FSMA.</td><td>Justin</td><td>Before import</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>NDI review</strong> — verify HA and Pine Bark don't require New Dietary Ingredient notification. Consult regulatory attorney.</td><td>Justin + atty</td><td>Before launch</td></tr>
-<tr><td style="color:#e67e22">◐</td><td><strong>Label compliance review</strong> — Kord Partners handling. Supplement Facts, allergen, DSHEA, manufacturer info.</td><td>Kord Partners</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Allergen determination</strong> — confirm if Verisol® is fish-derived → "Contains: Fish" required (FALCPA).</td><td>Justin</td><td>Before label</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Third-party lab testing (COA)</strong> — identity, potency, heavy metals, microbial. REQUIRED by 21 CFR Part 111 cGMP. $2-5K. NSF/Eurofins/ANRESCO.</td><td>Justin</td><td style="color:#c0392b">Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Prop 65 testing</strong> — test for lead in collagen. If skip → lawsuit risk. Common Prop 65 bounty hunter target.</td><td>Justin</td><td>Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Stability testing</strong> — shelf life data from COSMAX? Needed for expiration date on label. Accelerated = 3-6 months.</td><td>Justin/COSMAX</td><td>Ask COSMAX</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Trademark — "Sensitive Ones"</strong> — USPTO, $250-350/class + attorney $1-2K. Filing establishes priority.</td><td>Justin</td><td style="color:#c0392b">ASAP</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Trademark — "Skin Support"</strong> — may be descriptive. Attorney should advise.</td><td>Justin</td><td>ASAP</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Trademark search</strong> — confirm no conflicts in supplement category before spending on branding.</td><td>Justin/atty</td><td>ASAP</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Verisol® license/usage rights</strong> — need a license from GELITA? Most branded ingredients require supply agreement. Confirm with COSMAX.</td><td>Justin/COSMAX</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Product liability insurance</strong> — $1-2M coverage, $700-3K/yr. REQUIRED. Insureon, Hiscox, Next Insurance.</td><td>Justin</td><td style="color:#c0392b">Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>General business liability</strong> — separate from PLI. Covers popup events, etc. $400-800/yr.</td><td>Justin</td><td>Before popup</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Auto-renewal compliance</strong> — CA SB-313, NY, FTC rules. Clear disclosure, easy cancellation, renewal reminders in Recharge.</td><td>Justin/Theo</td><td>Before launch</td></tr>
-</table></div>
-
-<h2>2. Manufacturing & Supply Chain <span style="font-size:10px;color:#e67e22;margin-left:auto">5/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#e67e22">◐</td><td><strong>Manufacturer selected</strong> — COSMAX NBT (240K) vs NaturalWay (70K). Decision pending taste test + Pine Bark issue (100mg vs 28mcg).</td><td>Justin+Alex</td><td>This month</td></tr>
-<tr><td style="color:#e67e22">◐</td><td><strong>Sample taste test</strong> — COSMAX arrived. NaturalWay comparison pending.</td><td>Alex</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Production order placed</strong> — needs manufacturer decision + payment terms.</td><td>Justin</td><td>After decision</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Production timeline confirmed</strong> — COSMAX 4-8 weeks typical. Need exact date.</td><td>Justin/COSMAX</td><td>After order</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Packaging print files finalized</strong> — Supplement Facts, barcode/UPC, regulatory text, allergen. Are these done?</td><td>Dawon/Justin</td><td>Before prod</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>UPC/barcode</strong> — GS1 barcode. $250 for company prefix (10 barcodes). Required for Amazon, retail, 3PLs.</td><td>Justin</td><td>Before pkg</td></tr>
-<tr><td style="color:#e67e22">◐</td><td><strong>Export process</strong> — Kord Partners handling. Justin pressuring.</td><td>Justin/Kord</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Customs broker selected</strong> — who handles US clearance? Kord or separate?</td><td>Justin</td><td>Before shipping</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Prior Notice (FDA)</strong> — must file before shipment arrives at US port. CBP ACE system.</td><td>Justin/broker</td><td>Before shipment</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>KORUS FTA Certificate of Origin</strong> — 0% duty. COSMAX must provide.</td><td>Justin/COSMAX</td><td>Before shipping</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>3PL selected and contracted</strong> — ShipBob/ShipMonk/Deliverr. 2-4 week onboarding.</td><td>Justin</td><td style="color:#c0392b">6+ wks before</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>3PL-Shopify integration</strong> — automatic order routing. Install app, configure, test.</td><td>Justin/Theo</td><td>After 3PL</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Shipping rates configured</strong> — free sub, calculated OT. Shopify profiles + 3PL rates.</td><td>Justin</td><td>Before launch</td></tr>
-</table></div>
-
-<h2>3. Technology & Infrastructure <span style="font-size:10px;color:#e67e22;margin-left:auto">5/10 (only 37% complete)</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Shopify store created</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Shopify plan selected</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Theme installed</td><td>Dawon</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Product listing created</strong> — title, images, pricing, Supplement Facts, weight.</td><td>Dawon/Alex</td><td>After shoot</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Shopify Payments activated</strong> — verify supplement category approved.</td><td>Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Recharge installed</td><td>Theo/Justin</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Subscription checkout tested</strong> — full flow: cart → toggle → checkout → confirm → portal. Test skip/pause/cancel.</td><td>Theo</td><td>Before launch</td></tr>
-<tr><td style="color:#e67e22">◐</td><td><strong>Klaviyo account set up</strong> — sender domain verified?</td><td>Theo</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Klaviyo-Shopify integration</strong> — browse/cart/purchase events sync.</td><td>Theo</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Klaviyo-Recharge integration</strong> — subscription events (skip/pause/cancel/renewal/failed).</td><td>Theo</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Sender domain authentication (DKIM/SPF/DMARC)</strong> — without this, emails → spam.</td><td>Theo/Justin</td><td>Before email</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Domain owned (forsensitiveones.com)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Domain connected to Shopify</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>SSL certificate active</td><td>Auto</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Email addresses set up</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Google Analytics 4 installed</strong></td><td>Theo/Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Meta Pixel installed</strong></td><td>Theo</td><td>Before ads</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>TikTok Pixel installed</strong></td><td>Theo</td><td>Before ads</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Google Tag Manager</strong> — optional but recommended.</td><td>Theo</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Conversion tracking tested</strong> — verify events fire in GA4, Meta, TikTok.</td><td>Theo</td><td>Before ads</td></tr>
-</table></div>
-
-<h2>4. Finance & Accounting <span style="font-size:10px;color:#e67e22;margin-left:auto">5/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Business bank account created</td><td>Justin</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Bookkeeping system</strong> — QuickBooks/Xero/Wave. Track from day 1.</td><td>Justin</td><td style="color:#c0392b">ASAP</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Sales tax registration</strong> — Ohio requires. Other states via nexus. TaxJar/Avalara.</td><td>Justin</td><td>Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Sales tax automation</strong> — Shopify Tax (free) or TaxJar ($19/mo+).</td><td>Justin</td><td>Before sale</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Payment processor verified</strong> — confirm Shopify Payments approves supplements.</td><td>Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Wire transfer capability</strong> — international wire to COSMAX ($76K+). Bank set up for USD→KRW.</td><td>Justin</td><td>Before order</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Budget tracking spreadsheet</strong> — actual vs $200K. Weekly review.</td><td>Justin</td><td>Now</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>$60K cash on hand (NEVER DISCLOSE)</td><td>—</td><td>Confirmed</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>Nurihaus investment ($200K) — deck under review</td><td>Alex</td><td>In progress</td></tr>
-</table></div>
-
-<h2>5. Product & Formulation <span style="font-size:10px;color:#e67e22;margin-left:auto">6/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Formulation finalized — 8 ingredients with exact doses</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Flavor selected — pineapple</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Format decided — dual-cap (25ml liquid + 2 tablets)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Box packaging outline designed (0326)</td><td>Dawon</td><td>Done</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>COSMAX sample — arrived, taste testing</td><td>Alex</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Shelf life / expiration date</strong> — COSMAX stability data needed for label.</td><td>Justin/COSMAX</td><td>Before label</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Storage requirements</strong> — refrigeration needed? Affects 3PL + shipping.</td><td>Justin/COSMAX</td><td>Before 3PL</td></tr>
-</table></div>
-
-<h2>6. Marketing & Brand <span style="font-size:10px;color:#27ae60;margin-left:auto">8/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Brand identity defined</td><td>Alex/Dawon</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Positioning locked — "Inner care for sensitive problems."</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Brand dashboard (15 tabs, live on GitHub)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Website prototype (11 pages, live on GitHub)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>140 ads/social posts with mockups (live on GitHub)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Klaviyo system — 14 flows, 48+ emails, A/B (live on GitHub)</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Industry Tea card deck — 1,176 combos</td><td>Theo</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Pitch deck v8 ready</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>Apr 15 photoshoot — confirmed</td><td>All</td><td>Apr 15</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>Apr 17 Industry Tea videoshoot — confirmed</td><td>Miko</td><td>Apr 17</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>Apr 29 Doctor interview — Dr. Park confirmed</td><td>Alex+Miko</td><td>Apr 29</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Social accounts set up (@sensitiveones IG + TikTok)</td><td>Alex/Dawon</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Meta Business Manager + Ad Account</strong> — 2-5 days for verification.</td><td>Justin</td><td>2+ wks before ads</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>TikTok Business Center + Ad Account</strong></td><td>Justin</td><td>2+ wks before ads</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Google Ads account</strong> — optional for launch.</td><td>Justin</td><td>Optional</td></tr>
-</table></div>
-
-<h2>7. Operations & CX <span style="font-size:10px;color:#c0392b;margin-left:auto">2/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Customer support system</strong> — Gorgias ($10/mo) or Zendesk. Shopify integration. Someone checking daily.</td><td>Justin</td><td style="color:#c0392b">Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Customer support SOP</strong> — response time target (24-48hr), templates, who responds.</td><td>Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Returns process</strong> — 30-day guarantee. Refund without return? Who processes?</td><td>Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Shipping box / mailer design</strong> — branded or plain? Insert card? This IS the first impression.</td><td>Dawon/Alex</td><td>Before shipment</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Insert card designed</strong> — "How to take," social handles, QR code, DSHEA disclaimer.</td><td>Dawon</td><td>Before shipment</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Seeding mailer designed</strong> — 120+ creator packages. Custom packaging? Handwritten note?</td><td>Dawon/Alex</td><td>Before seeding</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Customer subscription portal</strong> — Recharge portal accessible from Shopify. Test skip/pause/cancel.</td><td>Theo</td><td>Before launch</td></tr>
-</table></div>
-
-<h2>8. Content & Social <span style="font-size:10px;color:#27ae60;margin-left:auto">7/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Content strategy — Industry Tea, doctor interview, founder BTS, viral originals</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Video production plans — all shot lists and prep docs ready</td><td>Miko</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Theo's Klaviyo email designs (6 emails, Apr 12 set)</td><td>Theo</td><td>Done</td></tr>
-<tr><td style="color:#e67e22">◐</td><td>Influencer Google Sheet — 3 tabs (Creator Friends, Gifting, Live Sellers)</td><td>Daesung+Justin</td><td>In progress</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Creator Friends list populated (150-300)</strong> — sheet exists, is it filled?</td><td>Daesung+Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Content calendar tool</strong> — Notion? Later.com? Buffer? Need scheduling system.</td><td>Theo/Alex</td><td>Before posting</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>UGC rights management</strong> — permission to repost creator content? Simple agreement needed. FTC requires for ads.</td><td>Justin</td><td>Before reposting</td></tr>
-</table></div>
-
-<h2>9. Investment & Fundraising <span style="font-size:10px;color:#e67e22;margin-left:auto">5/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Pitch deck v8 ready</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Nurihaus meeting completed (Apr 11) — positive</td><td>Alex</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Email deck to 백아람</strong> — ready but NOT sent. Critical next step.</td><td>Alex</td><td style="color:#c0392b">THIS WEEK</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>SAFE or investment agreement drafted</strong> — YC template + Korean modifications. $1-3K attorney.</td><td>Justin/atty</td><td>When commits</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Cap table modeled post-investment</strong> — 1:1:1 now. Investor 10-15% → who dilutes?</td><td>Alex+Justin</td><td>Before investment</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>MOU article</strong> — press link for 기록용.</td><td>Alex</td><td>This month</td></tr>
-</table></div>
-
-<h2>10. Team & Communication <span style="font-size:10px;color:#e67e22;margin-left:auto">7/10</span></h2>
-<div class="S"><table>
-<tr><th style="width:20px">St</th><th>Item</th><th style="width:70px">Owner</th><th style="width:80px">When</th></tr>
-<tr><td style="color:#27ae60">✓</td><td>Team roles defined</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Notion workspace structured with task databases</td><td>—</td><td>Done</td></tr>
-<tr><td style="color:#27ae60">✓</td><td>Monday 3-line check-in established</td><td>All</td><td>Done</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Co-founder agreement / vesting</strong> — formal agreement needed. What if someone leaves? Without vesting, co-founder walks with 33.3% permanently.</td><td>All three</td><td style="color:#c0392b">CRITICAL</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>IP assignment agreement</strong> — who owns Dawon/Theo's designs? Miko's videos? Need work-for-hire agreement.</td><td>Justin</td><td>Before launch</td></tr>
-<tr><td style="color:#c0392b">✗</td><td><strong>Contractor agreements</strong> — Theo/Dawon/Miko on written contracts? Scope, payment, IP, confidentiality.</td><td>Justin</td><td>Should exist</td></tr>
-</table></div>
-
-<h2 style="border-left-color:#c0392b">10 CRITICAL GAPS — Will Block Launch or Create Legal Risk</h2>
-<div class="S">
-<div class="no"><strong>1. No co-founder operating agreement.</strong> 3 people, 33.3% each, no written agreement. Ticking bomb. Lawyer NOW.</div>
-<div class="no"><strong>2. No product liability insurance.</strong> Ingestible without PLI = personal exposure. $700-3K/yr. Get quotes THIS WEEK.</div>
-<div class="no"><strong>3. No lab testing (COA).</strong> Violates cGMP. Required by Amazon. Can't defend Prop 65. $2-5K.</div>
-<div class="no"><strong>4. No 3PL selected.</strong> Where do boxes go from Korea? 2-4 week onboarding. Start NOW.</div>
-<div class="no"><strong>5. No bookkeeping.</strong> Bank exists, no QuickBooks/Xero. Tax = nightmare without this.</div>
-<div class="no"><strong>6. No sales tax.</strong> Ohio requires collection. Compounds monthly. TaxJar/Shopify Tax.</div>
-<div class="no"><strong>7. FDA S/F notification.</strong> Legally required within 30 days of marketing. Clock starts May.</div>
-<div class="no"><strong>8. Trademark not filed.</strong> Someone else could file "Sensitive Ones" tomorrow. $250-350/class.</div>
-<div class="no"><strong>9. No customer support.</strong> Orders come in, complaints go where? Gorgias $10/mo.</div>
-<div class="no"><strong>10. Stability testing unclear.</strong> No shelf life = can't print label. Ask COSMAX TODAY.</div>
+<div class="audit-summary">
+<div><div class="anum" style="color:#27ae60">57</div><div class="alabel">Done</div></div>
+<div><div class="anum" style="color:#e67e22">29</div><div class="alabel">In Progress</div></div>
+<div><div class="anum" style="color:#c0392b">21</div><div class="alabel">Not Started</div></div>
+<div><div class="anum" style="color:#B8255A">107</div><div class="alabel">Total Items</div></div>
 </div>
 
-<div class="diamond" style="text-align:center">
-<p style="font-size:36px;font-weight:800;color:#e67e22">60%</p>
-<p style="font-size:9px;color:#555;letter-spacing:1px;text-transform:uppercase">Launch Readiness</p>
-<p style="font-size:10px;color:#888;margin-top:8px">Creative = 8/10. Technology = 5/10 (only 37% complete). Operations = 2/10. Justin owns most red items. Move NOW.</p>
+<!-- 1. LEGAL & COMPLIANCE -->
+<h2>1. Legal &amp; Compliance <span class="score-pill score-pill-red">4/10</span></h2>
+<p style="color:#c0392b;font-size:9px;font-weight:700;margin-bottom:6px">WARNING: HIGHEST RISK AREA. Most items not started. Any one of these can block launch or trigger lawsuit post-launch.</p>
+
+<div class="audit-section">
+<h3>Entity &amp; Structure</h3>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">LLC formed (For Sensitive Ones LLC, Ohio)</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">EIN obtained</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>Operating Agreement signed by all 3 co-founders</strong> — defines equity, roles, decision authority, exit provisions. Without this, you have no legal protection if a co-founder dispute arises.</div><div class="awho">Justin</div><div class="awhen">ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Ohio LLC annual filing / franchise tax</strong> — check if Ohio requires annual report or commercial activity tax (CAT). Miss it = penalties.</div><div class="awho">Justin</div><div class="awhen">Check date</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Business bank account — separate from personal. Required for LLC legal protection. Stripe/Shopify payouts need a destination.</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+
+<h3>FDA &amp; Supplement Compliance</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>FDA Structure/Function Claim Notification</strong> — must file within 30 days of first marketing. Free but needs attorney review ($1-3K). THIS IS LEGALLY REQUIRED.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>Foreign Facility Registration</strong> — confirm COSMAX NBT is FDA-registered. If not, they must register BEFORE shipping to US.</div><div class="awho">Justin</div><div class="awhen">Before import</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>US Agent designation</strong> — COSMAX must designate a US-based agent as FDA point of contact.</div><div class="awho">Justin</div><div class="awhen">Before import</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>FSVP (Foreign Supplier Verification Program)</strong> — SO LLC as importer must create and maintain FSVP records. Required by FSMA.</div><div class="awho">Justin</div><div class="awhen">Before import</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>NDI review</strong> — verify Hyaluronic Acid and Pine Bark Extract don't require New Dietary Ingredient notification. Consult regulatory attorney.</div><div class="awho">Justin + attorney</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat"><strong>Label compliance review</strong> — Kord Partners handling. Must meet 21 CFR 101.36 (Supplement Facts), allergen declaration, DSHEA disclaimer, manufacturer info.</div><div class="awho">Kord Partners</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Allergen determination</strong> — confirm if Verisol® is fish-derived. If yes → "Contains: Fish" required (FALCPA).</div><div class="awho">Justin</div><div class="awhen">Before label print</div></div>
+
+<h3>Lab Testing</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>Third-party lab testing (COA)</strong> — identity, potency, heavy metals (lead, arsenic, cadmium, mercury), microbial contamination. REQUIRED by 21 CFR Part 111 cGMP. Not optional. $2-5K per SKU. NSF International, Eurofins, or ANRESCO.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Prop 65 testing</strong> — test for California Prop 65 listed chemicals (especially lead in collagen). If fail → must add CA warning. If skip → lawsuit risk. Common target for Prop 65 bounty hunters.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Stability testing</strong> — how long does the product maintain potency? Needed for expiration date on label. Accelerated stability testing takes 3-6 months. Has COSMAX done this?</div><div class="awho">Justin / COSMAX</div><div class="awhen">Ask COSMAX</div></div>
+
+<h3>Trademark &amp; IP</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Trademark filing — "Sensitive Ones"</strong> — USPTO application. $250-350 per class + attorney $1-2K. Takes 8-12 months to register but filing date establishes priority.</div><div class="awho">Justin</div><div class="awhen">ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Trademark filing — "Skin Support"</strong> — may be descriptive (harder to register). Attorney should advise on registerability.</div><div class="awho">Justin</div><div class="awhen">ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Trademark search</strong> — confirm no existing marks conflict with "Sensitive Ones" or "Skin Support" in supplement category. Do this BEFORE spending on branding.</div><div class="awho">Justin / attorney</div><div class="awhen">ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Verisol® license/usage rights</strong> — do you need a license from GELITA to use the Verisol® trademark on your packaging and marketing? Most branded ingredient suppliers require a supply agreement. Confirm with COSMAX if this is covered.</div><div class="awho">Justin / COSMAX</div><div class="awhen">Before launch</div></div>
+
+<h3>Insurance</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>Product liability insurance</strong> — $1-2M coverage. $700-3,000/yr. REQUIRED before first sale. Some 3PLs and retailers require proof of insurance. Insureon, Hiscox, Next Insurance.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>General business liability</strong> — separate from product liability. Covers slip-and-fall at popup, property damage, etc. $400-800/yr.</div><div class="awho">Justin</div><div class="awhen">Before popup</div></div>
+
+<h3>Subscription Compliance</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Auto-renewal compliance</strong> — California (SB-313), New York, and federal FTC rules require: clear disclosure of recurring charges, easy cancellation, renewal reminders. Must be built into checkout flow and Recharge settings. Failure = lawsuits + chargebacks.</div><div class="awho">Justin / Theo</div><div class="awhen">Before launch</div></div>
+</div>
+
+<!-- 2. MANUFACTURING & SUPPLY CHAIN -->
+<h2>2. Manufacturing &amp; Supply Chain <span class="score-pill score-pill-yellow">5/10</span></h2>
+
+<div class="audit-section">
+<h3>Production</h3>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat"><strong>Manufacturer selected</strong> — COSMAX NBT (primary, 240K units) vs NaturalWay (backup, 70K). Decision pending taste test comparison + Pine Bark dose issue (100mg vs 28mcg).</div><div class="awho">Justin + Alex</div><div class="awhen">This month</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat"><strong>Sample taste test</strong> — COSMAX sample arrived. NaturalWay comparison pending.</div><div class="awho">Alex</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Production order placed</strong> — cannot place until manufacturer decision finalized + payment terms agreed.</div><div class="awho">Justin</div><div class="awhen">After decision</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Production timeline confirmed</strong> — how long from order to finished goods? COSMAX typically 4-8 weeks for supplement production. Need exact timeline.</div><div class="awho">Justin / COSMAX</div><div class="awhen">After order</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Packaging print files finalized</strong> — box design exists (magenta, outline confirmed 0326). But final print-ready files need: Supplement Facts panel with exact doses, barcode/UPC, all regulatory text, allergen info. Are these done?</div><div class="awho">Dawon / Justin</div><div class="awhen">Before production</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>UPC/barcode</strong> — need a GS1 barcode for each SKU. Required for Amazon, retail, and most 3PLs. $250 for GS1 company prefix (10 barcodes). Have you purchased this?</div><div class="awho">Justin</div><div class="awhen">Before packaging</div></div>
+
+<h3>Export &amp; Logistics</h3>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat"><strong>Export process</strong> — Kord Partners handling. Justin pressuring. Label compliance = 1-2 weeks after docs submitted.</div><div class="awho">Justin / Kord</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Customs broker selected</strong> — who handles US customs clearance? Is Kord Partners doing this or do you need a separate broker?</div><div class="awho">Justin</div><div class="awhen">Before shipping</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Prior Notice (FDA)</strong> — must be filed before food/supplement shipment arrives at US port. Via CBP ACE system. Who is filing this?</div><div class="awho">Justin / broker</div><div class="awhen">Before each shipment</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>KORUS FTA Certificate of Origin</strong> — needed to get 0% duty rate. COSMAX must provide this document certifying Korean origin.</div><div class="awho">Justin / COSMAX</div><div class="awhen">Before shipping</div></div>
+
+<h3>Fulfillment (3PL)</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>3PL selected and contracted</strong> — ShipBob, ShipMonk, Deliverr, or other? Need to select, sign contract, set up account, establish receiving procedures. This takes 2-4 weeks minimum.</div><div class="awho">Justin</div><div class="awhen">6+ weeks before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>3PL integration with Shopify</strong> — 3PL needs to sync with Shopify for automatic order routing. Most 3PLs have Shopify apps. Need to install, configure, test.</div><div class="awho">Justin / Theo</div><div class="awhen">After 3PL selection</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Shipping rates configured</strong> — free for subscribers, calculated for OT. Need to set up shipping profiles in Shopify + negotiate 3PL rates.</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+</div>
+
+<!-- 3. TECHNOLOGY & INFRASTRUCTURE -->
+<h2>3. Technology &amp; Infrastructure <span class="score-pill score-pill-green">8/10</span></h2>
+
+<div class="audit-section">
+<h3>Ecommerce Platform</h3>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Shopify store created (r7ffj9-wm.myshopify.com)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Shopify plan selected</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Shopify theme installed</div><div class="awho">Dawon</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Product listing created in Shopify</strong> — title, description, images, pricing ($99 OT / $69 sub), variants, Supplement Facts, weight for shipping.</div><div class="awho">Dawon / Alex</div><div class="awhen">After photoshoot</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Shopify Payments activated</strong> — Stripe-powered. Needs business info, bank account, tax ID. Verify supplement category is approved (Shopify allows supplements).</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+
+<h3>Subscription</h3>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Recharge installed</div><div class="awho">Theo / Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Subscription checkout flow tested</strong> — test the full flow: add to cart → subscribe toggle → checkout → payment → order confirmation → subscription dashboard. Test skip, pause, cancel.</div><div class="awho">Theo</div><div class="awhen">Before launch</div></div>
+
+<h3>Email &amp; Marketing Tech</h3>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat"><strong>Klaviyo account set up</strong> — Theo set up in 15 minutes (context transfer). Sender domain verified?</div><div class="awho">Theo</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Klaviyo-Shopify integration</strong> — connect Klaviyo to Shopify for: browse tracking, cart events, purchase events, customer sync. Required for browse/cart abandonment flows.</div><div class="awho">Theo</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Klaviyo-Recharge integration</strong> — connect for: subscription events (skip, pause, cancel, renewal, payment failed). Required for subscription lifecycle flows.</div><div class="awho">Theo</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Sender domain authentication (DKIM/SPF/DMARC)</strong> — required for email deliverability. Without it, emails go to spam. Set up in Klaviyo → DNS settings.</div><div class="awho">Theo / Justin</div><div class="awhen">Before first email</div></div>
+
+<h3>Domain &amp; DNS</h3>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">forsensitiveones.com domain owned</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Domain connected to Shopify (forsensitiveones.com)</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">SSL certificate active</div><div class="awho">Auto</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Email addresses set up (hello@forsensitiveones.com)</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+
+<h3>Analytics &amp; Tracking</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Google Analytics 4 installed</strong> — track website traffic, user behavior, conversion funnel. Shopify has native GA4 integration.</div><div class="awho">Theo / Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Meta Pixel installed</strong> — required for Facebook/Instagram ad tracking and optimization. Install via Shopify's Meta channel.</div><div class="awho">Theo</div><div class="awhen">Before ads</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>TikTok Pixel installed</strong> — required for TikTok ad tracking. Install via TikTok channel on Shopify.</div><div class="awho">Theo</div><div class="awhen">Before ads</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Google Tag Manager</strong> — optional but recommended. Central place to manage all tracking pixels. Makes future changes easier.</div><div class="awho">Theo</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Conversion tracking tested</strong> — test the full funnel: page view → add to cart → checkout → purchase. Verify events fire correctly in GA4, Meta, TikTok.</div><div class="awho">Theo</div><div class="awhen">Before ads</div></div>
+</div>
+
+<!-- 4. FINANCE & ACCOUNTING -->
+<h2>4. Finance &amp; Accounting <span class="score-pill score-pill-yellow">5/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Business bank account created</div><div class="awho">Justin</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Bookkeeping system</strong> — QuickBooks, Xero, or Wave. Track: revenue, COGS, expenses, payroll, taxes. Start from day 1. Not "we'll figure it out later."</div><div class="awho">Justin</div><div class="awhen">ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Sales tax registration</strong> — Ohio (home state) requires sales tax collection on supplements. Other states: economic nexus thresholds vary. After first ~$100K in sales, you may owe sales tax in CA, TX, NY, etc. Use TaxJar or Avalara integrated with Shopify.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Sales tax automation</strong> — Shopify Tax (free, basic) or TaxJar ($19/mo+) or Avalara. Auto-calculate and remit sales tax by state. Do NOT do this manually.</div><div class="awho">Justin</div><div class="awhen">Before first sale</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Payment processor terms reviewed</strong> — Shopify Payments/Stripe terms for supplements. Some processors have restrictions on supplement categories. Verify you're approved BEFORE launch.</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Wire transfer capability for COSMAX</strong> — how are you paying COSMAX? International wire ($76K+). Need bank set up for international transfers. Wire fees $25-50. Currency conversion considerations (USD → KRW).</div><div class="awho">Justin</div><div class="awhen">Before production order</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Budget tracking spreadsheet</strong> — track actual spend vs $200K budget. Manufacturing, ads, seeding, export, infrastructure, legal, buffer. Weekly review.</div><div class="awho">Justin</div><div class="awhen">Now</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">$60K cash on hand (NEVER DISCLOSE)</div><div class="awho">—</div><div class="awhen">Confirmed</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">Nurihaus investment ($200K) — deck under review, email pending to 백아람</div><div class="awho">Alex</div><div class="awhen">In progress</div></div>
+</div>
+
+<!-- 5. PRODUCT & FORMULATION -->
+<h2>5. Product &amp; Formulation <span class="score-pill score-pill-yellow">6/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Formulation finalized — 8 ingredients with exact doses confirmed</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Flavor selected — pineapple</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Format decided — dual-cap (25ml liquid + 2 tablets)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Box packaging outline designed (0326)</div><div class="awho">Dawon</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">COSMAX sample — arrived, taste testing in progress</div><div class="awho">Alex</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Shelf life / expiration date determined</strong> — how long is the product stable? COSMAX should provide stability data. Needed for label (Best By date).</div><div class="awho">Justin / COSMAX</div><div class="awhen">Before label</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Storage requirements confirmed</strong> — does the dual-cap need refrigeration? Temperature-controlled shipping? Affects 3PL selection and shipping costs.</div><div class="awho">Justin / COSMAX</div><div class="awhen">Before 3PL selection</div></div>
+</div>
+
+<!-- 6. MARKETING & BRAND -->
+<h2>6. Marketing &amp; Brand <span class="score-pill score-pill-green">8/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Brand identity defined — magenta #B8255A, white base, Times New Roman + Helvetica</div><div class="awho">Alex / Dawon</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Positioning locked — "Inner care for sensitive problems." Transparency-first.</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Brand dashboard built (928 lines, 14 tabs, live on GitHub)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Website prototype built (1,068 lines, 11 pages, live on GitHub)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">140 ads/social posts with visual mockups (live on GitHub)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Klaviyo system — 14 flows, 48+ emails, A/B variants (live on GitHub)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Industry Tea card deck — 20 magenta + 80 white = 1,176 combos</div><div class="awho">Theo</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Pitch deck v8 ready for Nurihaus</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">Apr 15 general photoshoot — confirmed</div><div class="awho">All</div><div class="awhen">Apr 15</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">Apr 17 Industry Tea videoshoot — confirmed</div><div class="awho">Miko</div><div class="awhen">Apr 17</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">Apr 29 Doctor interview — Dr. Park confirmed</div><div class="awho">Alex + Miko</div><div class="awhen">Apr 29</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Social accounts set up (@sensitiveones on IG + TikTok)</div><div class="awho">Alex / Dawon</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Meta Business Manager + Ad Account</strong> — need Business Manager set up, ad account created, payment method added. Required for paid ads. Takes 2-5 days for verification.</div><div class="awho">Justin</div><div class="awhen">2+ weeks before ads</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>TikTok Business Center + Ad Account</strong> — same for TikTok. TikTok Ads Manager + TikTok for Business account.</div><div class="awho">Justin</div><div class="awhen">2+ weeks before ads</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Google Ads account</strong> — if running Google search/display. Account setup + payment + billing.</div><div class="awho">Justin</div><div class="awhen">Optional for launch</div></div>
+</div>
+
+<!-- 7. OPERATIONS & CUSTOMER EXPERIENCE -->
+<h2>7. Operations &amp; Customer Experience <span class="score-pill score-pill-red">2/10</span></h2>
+
+<div class="audit-section">
+<h3>Customer Support</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat acritical"><strong>Customer support system</strong> — how do customers reach you? Email only? Live chat? FAQ chatbot? At minimum: hello@forsensitiveones.com with someone checking it daily. Consider Gorgias ($10/mo) or Zendesk for Shopify integration.</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Customer support SOP</strong> — what happens when someone emails? Response time target (24-48hr). Who responds? Templates for common questions (shipping, returns, subscription changes, allergens).</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Returns process</strong> — how does a customer return? 30-day satisfaction guarantee (per policy). Who processes refunds? Through Shopify admin? Do you require product return or refund without return?</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+
+<h3>Unboxing &amp; Physical Experience</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Shipping box / mailer design</strong> — what does the customer physically receive? Branded mailer? Plain box with magenta tissue? Insert card? This IS the first impression. AG1 sends a welcome kit. Ritual has a designed unboxing. What's ours?</div><div class="awho">Dawon / Alex</div><div class="awhen">Before first shipment</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Insert card designed</strong> — the card inside the box. "How to take" instructions, social handles, QR code to email capture/referral, DSHEA disclaimer. Small but high-impact.</div><div class="awho">Dawon</div><div class="awhen">Before first shipment</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Seeding mailer designed</strong> — the 120+ creator seeding packages. Custom packaging? Handwritten note from Alex? Brand card? This is the creator's first physical experience with SO.</div><div class="awho">Dawon / Alex</div><div class="awhen">Before seeding</div></div>
+
+<h3>Subscription Management</h3>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Customer subscription portal</strong> — where do subscribers manage their subscription? Recharge provides a customer portal. Must be accessible from Shopify account page. Test: skip, pause, cancel, update payment, change address.</div><div class="awho">Theo</div><div class="awhen">Before launch</div></div>
+</div>
+
+<!-- 8. CONTENT & SOCIAL -->
+<h2>8. Content &amp; Social <span class="score-pill score-pill-yellow">7/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Content strategy defined — Industry Tea, doctor interview, founder BTS, viral originals</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Video production plans — BTS shot list, Industry Tea shoot plan, doctor interview prep</div><div class="awho">Miko</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Theo's Klaviyo email designs (6 emails, Apr 12 set)</div><div class="awho">Theo</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon aprog">◐</div><div class="awhat">Influencer Google Sheet — 3 tabs (Creator Friends, Free Gifting, Live Sellers)</div><div class="awho">Daesung + Justin</div><div class="awhen">In progress</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Creator Friends list populated (150-300)</strong> — the sheet exists but is it filled? Daesung + Justin need to compile personal network contacts.</div><div class="awho">Daesung + Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Content calendar tool</strong> — are you scheduling content through Notion? Later.com? Hootsuite? Buffer? Need a system for planning, scheduling, and tracking posts across IG + TikTok.</div><div class="awho">Theo / Alex</div><div class="awhen">Before posting starts</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>UGC rights management</strong> — when creators post about SO, do you have permission to repost? Need a simple agreement or DM confirmation process. FTC requires this for using creator content in ads.</div><div class="awho">Justin</div><div class="awhen">Before reposting</div></div>
+</div>
+
+<!-- 9. INVESTMENT & FUNDRAISING -->
+<h2>9. Investment &amp; Fundraising <span class="score-pill score-pill-yellow">5/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Pitch deck v8 ready</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Nurihaus meeting completed (Apr 11) — positive reception</div><div class="awho">Alex</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Email pitch deck to 백아람</strong> — deck is ready but hasn't been sent yet. This is a critical next step.</div><div class="awho">Alex</div><div class="awhen">THIS WEEK</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>SAFE or investment agreement drafted</strong> — if Nurihaus commits, need a SAFE (or equivalent) drafted. Template available (YC SAFE). But may need Korean-specific modifications. Lawyer review $1-3K.</div><div class="awho">Justin / attorney</div><div class="awhen">When investor commits</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Cap table formalized</strong> — currently 1:1:1 (33.3% each). What happens when investor takes 10-15%? Need to model post-investment cap table. Who dilutes equally?</div><div class="awho">Alex + Justin</div><div class="awhen">Before investment</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>MOU article</strong> — press link for 기록용. Draft needed.</div><div class="awho">Alex</div><div class="awhen">This month</div></div>
+</div>
+
+<!-- 10. TEAM & COMMUNICATION -->
+<h2>10. Team &amp; Communication <span class="score-pill score-pill-yellow">7/10</span></h2>
+
+<div class="audit-section">
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Team roles defined — Alex (CEO), Justin (COO), Daesung (CMO), Theo (design), Dawon (design), Miko (video)</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Notion workspace structured with task databases per person</div><div class="awho">—</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon adone">✓</div><div class="awhat">Monday 3-line check-in established</div><div class="awho">All</div><div class="awhen">Done</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Co-founder agreement / vesting</strong> — do Alex, Justin, Daesung have a formal agreement? Vesting schedule? What happens if someone leaves? Without this, any co-founder can walk away with 33.3% permanently.</div><div class="awho">All three</div><div class="awhen">CRITICAL — ASAP</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>IP assignment agreement</strong> — who owns the designs Dawon/Theo create? The videos Miko films? Without IP assignment, creators may retain rights to their work. Simple work-for-hire agreement needed.</div><div class="awho">Justin</div><div class="awhen">Before launch</div></div>
+<div class="audit-item"><div class="aicon amiss">✗</div><div class="awhat"><strong>Contractor agreements for Theo/Dawon/Miko</strong> — are they on written contracts? Scope, payment, IP assignment, confidentiality. Protects both sides.</div><div class="awho">Justin</div><div class="awhen">Should exist already</div></div>
+</div>
+
+<!-- CRITICAL GAPS SUMMARY -->
+<h2 style="border-left-color:#c0392b">CRITICAL GAPS — Will Block Launch or Create Legal Risk</h2>
+
+<div class="agap"><div class="agap-title">1. No co-founder operating agreement</div><p>Three people sharing 33.3% each with no written agreement. If any relationship sours — and at a startup, relationships WILL be tested — you have no legal framework for: decision-making authority, what happens if someone leaves, vesting, IP ownership, buyout terms. This is a ticking bomb. Get a lawyer to draft this NOW.</p></div>
+
+<div class="agap"><div class="agap-title">2. No product liability insurance</div><p>Selling an ingestible product without product liability insurance = personal financial risk. One adverse reaction claim and you're personally exposed. $700-3,000/yr for $1-2M coverage. Justin should get quotes this week.</p></div>
+
+<div class="agap"><div class="agap-title">3. No third-party lab testing</div><p>Selling without a COA (Certificate of Analysis) violates 21 CFR Part 111 cGMP. Also: Amazon requires it, most 3PLs require it, and without it you can't defend against a Prop 65 lawsuit. $2-5K. Do it now, not later.</p></div>
+
+<div class="agap"><div class="agap-title">4. No 3PL selected</div><p>Where do the boxes go when they arrive from Korea? Who picks, packs, and ships to customers? 3PL onboarding takes 2-4 weeks minimum. If your product arrives and you have nowhere to send it, you're dead in the water. Start talking to ShipBob/ShipMonk NOW.</p></div>
+
+<div class="agap"><div class="agap-title">5. No bookkeeping system</div><p>Bank account exists but is anyone tracking revenue, COGS, expenses? Without QuickBooks/Xero from day 1, tax season = nightmare. Set up now before money starts moving.</p></div>
+
+<div class="agap"><div class="agap-title">6. No sales tax setup</div><p>Ohio requires sales tax on supplements. Other states trigger based on economic nexus. Selling without collecting = tax liability that compounds monthly. Set up TaxJar or Shopify Tax before first sale.</p></div>
+
+<div class="agap"><div class="agap-title">7. FDA Structure/Function notification not filed</div><p>Legally required within 30 days of first marketing. If you start posting social content with claims (which you will in May), the clock starts. Have a regulatory attorney review your claims and file the notification. Free to file, $1-3K for attorney review.</p></div>
+
+<div class="agap"><div class="agap-title">8. Trademark not filed</div><p>Every day you don't file = another day someone else could file "Sensitive Ones" in the supplement category. Filing establishes your priority date. $250-350 per class + attorney. Justin should do this this week.</p></div>
+
+<div class="agap"><div class="agap-title">9. No customer support system</div><p>When orders start coming in, where do complaints go? Who responds? What's the SLA? Set up hello@forsensitiveones.com at minimum. Consider Gorgias ($10/mo) for Shopify integration.</p></div>
+
+<div class="agap"><div class="agap-title">10. Stability testing unclear</div><p>Has COSMAX provided stability data? What's the shelf life? What's the expiration date on the label? If you can't answer these questions, you can't print the label. Ask COSMAX immediately.</p></div>
+
+<!-- READINESS SCORE -->
+<h2>OVERALL LAUNCH READINESS</h2>
+
+<div style="background:#111;border:1px solid #222;border-radius:8px;padding:20px;text-align:center;margin:8px 0">
+<p style="font-size:48px;font-weight:800;color:#e67e22">60%</p>
+<p style="font-size:10px;color:#555;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Launch Readiness Score</p>
+<p style="font-size:11px;color:#888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto">Marketing and brand are strong (8/10). Product and formulation are solid (6/10). But <strong style="color:#c0392b">legal, finance, operations, and infrastructure are critically behind</strong>. The creative side is ahead of the operational side. Justin needs to close these gaps — most of the red items are his responsibility.</p>
 </div>
 
 <div class="S">
-<h3>MUST HAPPEN IN NEXT 2 WEEKS (Apr 14-28)</h3>
-<p style="color:#ccc;line-height:2.2;font-size:11px">
-<strong style="color:#c0392b">1.</strong> Co-founder operating agreement — lawyer, signed<br>
-<strong style="color:#27ae60">2.</strong> <s style="color:#555">Business bank account ✓</s><br>
-<strong style="color:#c0392b">3.</strong> Trademark search + filing<br>
-<strong style="color:#c0392b">4.</strong> Product liability insurance — quotes, bind<br>
-<strong style="color:#c0392b">5.</strong> 3PL research + selection<br>
-<strong style="color:#c0392b">6.</strong> Lab testing ordered<br>
-<strong style="color:#c0392b">7.</strong> Ask COSMAX: FDA registration, stability, Verisol® license, allergen, storage<br>
-<strong style="color:#c0392b">8.</strong> Email 백아람 the pitch deck<br>
-<strong style="color:#27ae60">9.</strong> <s style="color:#555">Shopify setup ✓</s><br>
-<strong style="color:#27ae60">10.</strong> <s style="color:#555">Email + social accounts ✓</s>
+<h3>WHAT MUST HAPPEN IN THE NEXT 2 WEEKS (Apr 14-28)</h3>
+<p style="color:#ccc;line-height:2.2;font-size:11px;margin-top:8px">
+<strong style="color:#c0392b">1.</strong> <strong>Co-founder operating agreement</strong> — get a lawyer, get it signed. Non-negotiable.<br>
+<strong style="color:#27ae60">2.</strong> <s style="color:#555">Business bank account — Done ✓</s><br>
+<strong style="color:#c0392b">3.</strong> <strong>Trademark search + filing</strong> — "Sensitive Ones" in supplement category. USPTO.<br>
+<strong style="color:#c0392b">4.</strong> <strong>Product liability insurance</strong> — get quotes from Insureon, Hiscox, Next. Bind coverage.<br>
+<strong style="color:#c0392b">5.</strong> <strong>3PL research + selection</strong> — ShipBob, ShipMonk, or other. Start onboarding.<br>
+<strong style="color:#c0392b">6.</strong> <strong>Lab testing ordered</strong> — contact NSF, Eurofins, or ANRESCO. Ship sample for COA.<br>
+<strong style="color:#c0392b">7.</strong> <strong>Ask COSMAX:</strong> FDA registration status, stability data/shelf life, Verisol® license, allergen source (fish?), storage requirements.<br>
+<strong style="color:#c0392b">8.</strong> <strong>Email 백아람</strong> the pitch deck. This has been "pending" for too long.<br>
+<strong style="color:#27ae60">9.</strong> <s style="color:#555">Shopify setup (plan, theme, domain, SSL, Recharge) — Done ✓</s><br>
+<strong style="color:#27ae60">10.</strong> <s style="color:#555">Email + social accounts — Done ✓</s><br>
 </p>
 </div>
+
 </div>
 
 <!-- ====== ACTIONS ====== -->
